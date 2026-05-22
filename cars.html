@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Autos | Cars</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            padding-top: 140px; /* Pushed down slightly to clear the header completely */
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #cccccc;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+        }
+
+        .sedan-section {
+            padding: 40px 10%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            color: #ffffff;
+        }
+
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .car-card {
+            background: #121212;
+            border: 1px solid #222;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* Essential for the absolute link overlay */
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+        }
+
+        .car-card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* This creates an invisible layer over the entire card, making images 100% clickable */
+        .car-card-link::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+        }
+
+        .car-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid #222;
+        }
+
+        .car-info {
+            padding: 25px;
+        }
+
+        .car-name {
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .car-desc {
+            font-size: 0.9rem;
+            color: #888888;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Luxe Autos</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cars.html" class="active">Cars</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="sedan-section">
+        <h2 class="section-title">The Sedan Collection</h2>
+        
+        <div class="car-grid">
+            <!-- BMW 3 Series Card -->
+            <div class="car-card">
+                <!-- Copy this code into your HTML file -->
+                <img class="car-img" src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&q=80&w=800" alt="BMW M4">
+                <div class="car-info">
+                    <h3 class="car-name">
+                        <a href="3series.html" class="car-card-link">BMW 3 Series</a>
+                    </h3>
+                    <p class="car-desc">The ultimate driver's car. Combining iconic styling, track efficiency, and everyday luxury in a perfect compact layout.</p>
+                </div>
+            </div>
+
+            <!-- BMW 5 Series Card -->
+            <div class="car-card">
+                <img class="car-img" src="https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&q=80&w=800" alt="BMW Executive Front">
+                <div class="car-info">
+                    <h3 class="car-name">
+                        <a href="5series.html" class="car-card-link">BMW 5 Series</a>
+                    </h3>
+                    <p class="car-desc">The benchmark of the executive class. Blending state-of-the-art technology with sharp, athletic road presence.</p>
+                </div>
+            </div>
+
+            <!-- BMW M5 Card -->
+            <div class="car-card">
+                <img class="car-img" src="https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?auto=format&fit=crop&q=80&w=800" alt="Range Rover Front View">
+                <div class="car-info">
+                    <h3 class="car-name">
+                        <a href="m5.html" class="car-card-link">BMW M5</a>
+                    </h3>
+                    <p class="car-desc">Track-ready supercar performance hidden inside a beautiful luxury sedan body. Unmatched power and precision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
